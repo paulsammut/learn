@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/display.cpp
+display.h
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/display.h
+iostream
+-
+storage.h
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/storage.h
+
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/display.h
+
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/main.cpp
+iostream
+-
+array
+-
+string
+-
+vector
+-
+storage.h
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/storage.h
+display.h
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/display.h
+
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/storage.cpp
+storage.h
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/storage.h
+
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/storage.h
+display.h
+/home/paul/learn/learn_cpp/chapter8/friend_member_function/display.h
+

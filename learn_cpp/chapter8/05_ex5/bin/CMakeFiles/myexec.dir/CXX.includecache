@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/paul/learn/learn_cpp/chapter8/ex5/Date.cpp
+Date.h
+/home/paul/learn/learn_cpp/chapter8/ex5/Date.h
+iostream
+-
+
+/home/paul/learn/learn_cpp/chapter8/ex5/Date.h
+
+/home/paul/learn/learn_cpp/chapter8/ex5/main.cpp
+iostream
+-
+cassert
+-
+Date.h
+/home/paul/learn/learn_cpp/chapter8/ex5/Date.h
+

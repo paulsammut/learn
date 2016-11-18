@@ -1,0 +1,8 @@
+http://www.learncpp.com/cpp-tutorial/95-overloading-unary-operators/
+
+ // Convert a Point into it's negative equivalent
+
+
+http://www.learncpp.com/cpp-tutorial/94-overloading-operators-using-member-functions/
+
+However, we are not able to overloaded operator<< as a member function. 
