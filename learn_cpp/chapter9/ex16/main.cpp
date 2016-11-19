@@ -48,7 +48,7 @@ Fraction makeNegative(Fraction f) // ideally we should do this by const referenc
 
 int main()
 {
-    std::cout << makeNegative(6); // note the integer here
+    std::cout << makeNegative(6) << std::endl; // note the integer here
 
     return 0;
 }
