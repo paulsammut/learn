@@ -34,7 +34,7 @@ public:
         
         // we need start from scratch with a new array that's the right size
         delete[] m_array;
-        IntArray(ia.m_size);
+        IntArray(ia.m_size); //this line sends me to the destructor again!!
 
         for(int i = 0; i < ia.m_size; i++)
            m_array[i] = ia.m_array[i];
