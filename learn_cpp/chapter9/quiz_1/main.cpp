@@ -28,22 +28,24 @@ public:
 
     IntArray& operator=(const IntArray &ia)
     {
-                    
         if( this == &ia)
             return *this;
         
         // we need start from scratch with a new array that's the right size
         delete[] m_array;
-        IntArray(ia.m_size); //this line sends me to the destructor again!!
+        //IntArray(ia.m_size); //this line sends me to the destructor again!!
+       m_size = ia.m_size;
+       m_array = new int[m_size]; 
 
-        for(int i = 0; i < ia.m_size; i++)
+        for(int i = 0; i < m_size; i++)
            m_array[i] = ia.m_array[i];
         return *this;
     }   
 
     IntArray(const IntArray &copy)
     {
-        IntArray(copy.m_size);  
+        // IntArray(copy.m_size);  
+       m_array = new int[copy.m_size]; 
         for(int i = 0; i < copy.m_size; i++)
            m_array[i] = copy.m_array[i];
     }   
@@ -84,4 +86,3 @@ int main()
     std::cout << b;
     return 0;
 }
-
