@@ -6,3 +6,13 @@ http://www.learncpp.com/cpp-tutorial/95-overloading-unary-operators/
 http://www.learncpp.com/cpp-tutorial/94-overloading-operators-using-member-functions/
 
 However, we are not able to overloaded operator<< as a member function. 
+
+
+http://www.learncpp.com/cpp-tutorial/911-the-copy-constructor/
+
+we're able to access the members of parameter fraction directly, even though it's not the implicit object. Preventing copies
+
+http://www.learncpp.com/cpp-tutorial/9-13-converting-constructors-explicit-and-delete/
+be used for implicit conversations are called converting constructors
+
+
