@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/paul/learn/learn_cpp/chapter10/ex01/Creature.h
+iostream
+-
+string
+-
+Point2D.h
+/home/paul/learn/learn_cpp/chapter10/ex01/Point2D.h
+
+/home/paul/learn/learn_cpp/chapter10/ex01/Point2D.h
+iostream
+-
+
+/home/paul/learn/learn_cpp/chapter10/ex01/main.cpp
+cassert
+-
+iostream
+-
+Creature.h
+/home/paul/learn/learn_cpp/chapter10/ex01/Creature.h
+

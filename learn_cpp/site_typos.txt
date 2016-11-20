@@ -16,3 +16,7 @@ http://www.learncpp.com/cpp-tutorial/9-13-converting-constructors-explicit-and-d
 be used for implicit conversations are called converting constructors
 
 
+http://www.learncpp.com/cpp-tutorial/102-composition/
+cout << "Enter a name for your creature: ";
+std::string name;
+std::cin >> name;
