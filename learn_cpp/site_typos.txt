@@ -20,3 +20,10 @@ http://www.learncpp.com/cpp-tutorial/102-composition/
 cout << "Enter a name for your creature: ";
 std::string name;
 std::cin >> name;
+
+http://www.learncpp.com/cpp-tutorial/103-aggregation/
+is the process of creating complex objects from simpler one.
+
+Aggregation
+
+To quality as an aggregation, a whole object 
