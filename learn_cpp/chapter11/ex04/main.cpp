@@ -25,6 +25,7 @@ class Apple : public Fruit
         friend ostream& operator<<(ostream &out, const Apple &a)
         {
             out << "Apple(" << a.getName() << ", " << a.getColor() << ", " << a.m_fiber << ")" << std::endl;
+            return out;
         }
 };
 
@@ -35,6 +36,7 @@ class Banana : public Fruit
     friend ostream& operator <<(ostream &out, const Banana &b)
     {
         out << "Banana(" << b.getName() << ", " << b.getColor() <<")" << std::endl;
+        return out;
     }
 };
 
