@@ -1,3 +1,4 @@
+// 11.6 redefining access levels
 #include <iostream>
 #include <array>
 #include <string>
@@ -19,7 +20,7 @@ class Derived : public Base
 public:
     Derived(int value) : Base(value) {}
     
-    using Base::print; //here we are redefining the access lever of an inherited base function
+    using Base::print; //here we are redefining the access level of an inherited base function
 };
 
 int main()
