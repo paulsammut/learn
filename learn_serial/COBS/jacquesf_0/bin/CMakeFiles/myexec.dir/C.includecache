@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/paul/learn/learn_serial/COBS/jacquesf_0/cobs.c
+stdint.h
+-
+stddef.h
+-
+
+/home/paul/learn/learn_serial/COBS/jacquesf_0/cobs.h
+stdint.h
+-
+stddef.h
+-
+
+/home/paul/learn/learn_serial/COBS/jacquesf_0/main.c
+stdlib.h
+-
+stdio.h
+-
+stdbool.h
+-
+string.h
+-
+cobs.h
+/home/paul/learn/learn_serial/COBS/jacquesf_0/cobs.h
+
