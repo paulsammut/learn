@@ -29,6 +29,12 @@ class Apple : public Fruit
         }
 };
 
+class HandJobs : public Fruit
+{
+private:
+    int num_jobs;
+};
+
 class Banana : public Fruit
 {
     public:

@@ -27,7 +27,6 @@ public:
 };
 
 // ---- Access specifier demo for inheritance
-
 class Pub : public Base
 {
 public:
