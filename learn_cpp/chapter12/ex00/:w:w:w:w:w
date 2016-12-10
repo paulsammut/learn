@@ -1,5 +1,5 @@
 // Chapter 12
-// Ex00 Pointers and references to the base class of derived objects
+
 #include <iostream>
 #include <array>
 #include <string>
@@ -44,13 +44,5 @@ int main()
 
     Derived *pDerived = &derived;
     std::cout << "pDerived is a " << pDerived->getName() << " and has value " << pDerived->getValue() << std::endl;
-
-    Base &rBase = derived;
-    Base *pBase = &derived;
-
-    std::cout << "rBase.getName - " << rBase.getName() << std::endl;
-    // This doesn't work because the base pointer can't see the child functions. 
-    std::cout << "rBase.getValueDoubled - " << rBase.getValueDoubled() << std::endl;
-       
     return 0;
 }
