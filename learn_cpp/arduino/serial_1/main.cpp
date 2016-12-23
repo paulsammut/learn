@@ -10,6 +10,7 @@ struct memTest
     int y; 
     int z; 
 };
+
 int main()
 {
     std::cout << "Size of int: " << sizeof(int) << std::endl;
@@ -20,7 +21,7 @@ int main()
     mt.y = 2;
     mt.z = 3;
     
-    std::cout << mt;
+    std::cout << mt.y;
 
     return 0;
 }

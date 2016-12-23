@@ -31,3 +31,6 @@ To quality as an aggregation, a whole object
 
 http://www.learncpp.com/cpp-tutorial/12-8-object-slicing/
 First code example, line 36, no \ before n for new line.
+
+http://www.learncpp.com/cpp-tutorial/12-x-chapter-12-comprehensive-quiz/
+The easiest way to overload operator<lt; for inherited classes
