@@ -36,5 +36,12 @@ int main()
     delete d_array;
     d_array = nullptr;
 
+
+    int *pData = malloc(sizeof(*pData));
+
+    *pData = 7;
+
+    std::cout << *pData << std::endl;
+
     return 0;
 }

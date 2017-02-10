@@ -1,0 +1,3 @@
+/home/paul/learn/learn_irrlicht/02_Custom-SceneNode/bin/CMakeFiles/rebuild_cache.dir
+/home/paul/learn/learn_irrlicht/02_Custom-SceneNode/bin/CMakeFiles/edit_cache.dir
+/home/paul/learn/learn_irrlicht/02_Custom-SceneNode/bin/CMakeFiles/example.dir
