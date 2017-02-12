@@ -11,4 +11,6 @@ irrlicht.h
 -
 driverChoice.h
 /home/paul/learn/learn_irrlicht/02_Custom-SceneNode/driverChoice.h
+stdio.h
+-
 
