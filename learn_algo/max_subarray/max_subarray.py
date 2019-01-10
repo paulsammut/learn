@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
+import math
+
 print 'hello'
 
-myList=[12,-23,13,23,12]
+myList=[100,12,-923,13,23,12]
 
-# reverse lookup
-for i, e in reversed(list(enumerate(myList))):
-        print(i, e)
+print myList
+
+print 'Performing analysis!'
 
 
 def find_max_crossing(A,low,mid,high):
@@ -36,6 +38,27 @@ def find_max_crossing(A,low,mid,high):
     max_sum = left_sum + right_sum
 
     print max_sum, " at index A[",max_left_sum,",",max_right_sum,"]"
-    return
+    return  max_left_sum, max_right_sum, max_sum
 
-find_max_crossing(myList, 0, 2, 4)
+def find_max_subarray(A,low,high):
+    if high == low:
+        return(low,high, A[low])
+    else:
+        mid = math.trunc((low+high)/2)
+        print mid
+        left_low, left_high, left_sum = find_max_subarray(A, low, mid)
+        right_low, right_high, right_sum = find_max_subarray(A, mid+1, high)
+        cross_low, cross_high, cross_sum = find_max_crossing(A, low, mid, high)
+
+        if left_sum >= right_sum and left_sum >= cross_sum:
+            print 'Left Sum Wins!'
+            return(left_low, left_high, left_sum)
+        elif right_sum >= left_sum and right_sum >= cross_sum:
+            print 'Right Sum Wins!'
+            return(right_low, right_high, right_sum)
+        else:
+            print 'Cross Wins'
+            return (cross_low, cross_high, cross_sum)
+
+a, b, c = find_max_subarray(myList, 0, len(myList)-1)
+print a, b, c
