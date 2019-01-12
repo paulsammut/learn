@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <math.h>
+#include <assert.h>
 
 using namespace std;
 
@@ -41,39 +42,19 @@ public:
         // until the index the sorted in element, plus the count of previous
         // sorted in elements, is greater than the median of the combined array.
         
-        int lastTwo[2][2] = {{-1,-1},{-1,-1}};
         int p_index = 0;
         
         for(int i = 0; i < static_cast<int>(smallA->size()); i++)
         {
             p_index         = findLocation((*smallA)[i], *bigA, p_index, static_cast<int>(bigA->size())-1) + i;
             
-            lastTwo[0][0] = lastTwo[1][0];
-            lastTwo[0][1] = lastTwo[1][1];
-            lastTwo[1][0] = i;
-            lastTwo[1][1] = p_index;
-            
             if(p_index >= max_mid)
                 break;
-
-
         }
         
         // now we have the element that has crossed the middle, along with 
         int low_mid_val = 0;
         int high_mid_val = 0;
-        if(lastTwo[1][1] == max_mid)
-            high_mid_val = (*smallA)[lastTwo[1][0]];
-        else 
-            high_mid_val = (*bigA)[max_mid - lastTwo[1][0] -1 ];
-
-        if(lastTwo[1][1] == low_mid)
-            low_mid_val = (*smallA)[lastTwo[1][0]];
-        else if(lastTwo[0][1] == low_mid)
-            low_mid_val = (*smallA)[lastTwo[0][0]];
-        else
-            low_mid_val = (*bigA)[low_mid - lastTwo[1][0] -1 ];
-
         
         return ((double)(high_mid_val + low_mid_val) / 2) ;
     }
@@ -81,11 +62,33 @@ public:
     // Finds the location of where an element should go 
     int findLocation(int p, vector<int>& A, int low, int high)
     {
+        assert(high >= low);
+
         // case of a 1 length array
         if(low == high) 
             return (p > A[low]) ? low + 1 : low;
 
-        int mid = ( (high - low) / 2 + low);
+        // case of two element array
+        else if(high ==  low + 1)
+        {
+            if(p >= A[high])
+                return high + 1;
+            else if( p >= A[low])
+                return low + 1;
+            else 
+                return low;
+        }
+
+        // case of three element array
+        else if(high - low == 2)
+            if(p >= A[high])
+                return high + 1;
+            else if( p >= A[low+1])
+                return low + 1;
+            else 
+                return low;
+
+        int mid = (high - low) / 2 + low;
 
         // case that the mid point equals our element
         if(A[mid] == p)
@@ -120,13 +123,19 @@ public:
 int main(void)
 {
     vector<int> nums1{3};
-    vector<int> nums2{1, 2, 4, 5};
+    vector<int> nums2{1, 2, 3, 4, 5, 6, 15};
 
     // vector<int> nums1{, , , 3, 4, , , };
 
     Solution sol;
 
-    cout << "Median: " << sol.findMedianSortedArrays(nums1, nums2) << endl;
+    while(true)
+    {
+        int input;
+        cin>>input;
+        cout << "index: " << sol.findLocation(input, nums2, 0, nums2.size()-1) << endl;
+    }
+    // cout << "Median: " << sol.findMedianSortedArrays(nums1, nums2) << endl;
 
     return 0;
 }
