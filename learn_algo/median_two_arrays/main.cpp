@@ -10,8 +10,17 @@ public:
         
         int m = nums1.size(); int n = nums2.size();
 
-        if(m+n == 2)
+        if(m == 1 && n == 1)
             return ((nums1[0] + nums2[0]) / 2);
+        
+        else if(m == 0)
+        {
+            return getMedianOneArray(nums2);
+        }
+        else if(n == 0)
+        {
+            return getMedianOneArray(nums1);
+        }
 
         vector<int>* smallA = (m >= n) ? &nums2 : &nums1;
         vector<int>* bigA   = (m < n) ? &nums2 : &nums1;
@@ -27,7 +36,6 @@ public:
             max_mid = ceil((m+n)/2);
             low_mid = max_mid;
         }
-        cout << "Max_mid: " << max_mid << " low_mid: " << low_mid <<endl;
 
         // we need to sort in the elements of the smaller array into the bigger
         // until the index the sorted in element, plus the count of previous
@@ -39,16 +47,16 @@ public:
         for(int i = 0; i < static_cast<int>(smallA->size()); i++)
         {
             p_index         = findLocation((*smallA)[i], *bigA, p_index, static_cast<int>(bigA->size())-1) + i;
-
-            cout << "P_index for element P["<<i<<"] is: " << p_index << endl;
-
-            if(p_index > max_mid)
-                break;
-
+            
             lastTwo[0][0] = lastTwo[1][0];
             lastTwo[0][1] = lastTwo[1][1];
             lastTwo[1][0] = i;
             lastTwo[1][1] = p_index;
+            
+            if(p_index >= max_mid)
+                break;
+
+
         }
         
         // now we have the element that has crossed the middle, along with 
@@ -66,8 +74,7 @@ public:
         else
             low_mid_val = (*bigA)[low_mid - lastTwo[1][0] -1 ];
 
-        cout << "High mid val is: " << high_mid_val << endl;
-        cout << "Low mid val is: "  << low_mid_val << endl;
+        
         return ((double)(high_mid_val + low_mid_val) / 2) ;
     }
 
@@ -93,12 +100,27 @@ public:
         else // ( p > A[mid])
             return findLocation(p, A, mid+1, high);
     }
+    
+    double getMedianOneArray(vector<int>& A)
+    {
+        int m = A.size();
+        
+        if (m == 1)
+            return A[m];        
+        else if (m % 2 == 0)
+        {
+            return ( (double)(A[m/2]) + (double)A[m/2-1] / 2 );
+            
+        }        
+        else 
+            return A[m/2];
+    }
 };
 
 int main(void)
 {
-    vector<int> nums2{1, 1, 3, 3};
-    vector<int> nums1{1, 1, 3, 3};
+    vector<int> nums1{3};
+    vector<int> nums2{1, 2, 4, 5};
 
     // vector<int> nums1{, , , 3, 4, , , };
 
