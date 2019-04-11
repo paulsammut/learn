@@ -4,7 +4,7 @@ import math
 
 print 'hello'
 
-myList=[100,12,-923,13,23,12]
+myList=[100,12,-923,13,23,12,200]
 
 print myList
 
@@ -60,5 +60,37 @@ def find_max_subarray(A,low,high):
             print 'Cross Wins'
             return (cross_low, cross_high, cross_sum)
 
+def find_max_left(A):
+    # find max A[1..j]
+    sum = 0;
+    max_sum_1_j = -float("inf")
+    for j, val in enumerate(A):
+        sum = sum + val
+        if sum > max_sum_1_j:
+            max_sum_1_j = sum
+            max_j = j
+    print 'j =', max_j
+
+    # find max A[i..j+1]
+    sum = 0;
+    max_sum_i_j_plus_1 = -float("inf")
+    i = max_j+1;
+    if i >= len(A):
+        return 1, len(A), max_sum_1_j, max_sum_1_j
+    while i >= 0:
+        sum += A[i]
+        if sum > max_sum_i_j_plus_1:
+            max_sum_i_j_plus_1 = sum
+            max_i = i
+        i = i -1
+
+
+    return max_i, max_j, max_sum_i_j_plus_1, max_sum_1_j
+
+
+
 a, b, c = find_max_subarray(myList, 0, len(myList)-1)
 print a, b, c
+
+print 'Doing the max from left:'
+print find_max_left(myList)
