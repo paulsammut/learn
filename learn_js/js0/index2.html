@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Vue from scratch</title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" v-model="price">
+            <div>Tax {{ taxFormatted }} </div>
+            <hr>
+            <div>Total: {{totalFormatted}}</div>
+            
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script>
+            console.log("Ummm")
+            new Vue({
+                el: '#app',
+                data:{
+                    price: 100,
+                    taxRate: 0.10,
+                },
+
+                computed: {
+                    tax: function() {
+                        return this.price * this.taxRate;
+                    },
+
+                    taxFormatted: function(){
+                        return "$" + this.tax.toFixed(2)
+                    },
+
+                    total: function(){
+                        return parseFloat(this.price) + this.tax;
+                    },
+
+                    totalFormatted: function(){
+                        return "$" + this.total.toFixed(2)
+                    },
+                }
+            });
+        </script>
+    </body>
+</html>

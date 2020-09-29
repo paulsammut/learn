@@ -1,0 +1,55 @@
+<script>
+    var first = "Paul"
+    var last = "Sammut"
+    last = "New"
+    console.log("I am " + first + " " + last)
+    document.write("First letter is: " + first[first.length - 1])
+    document.write("<br>")
+
+    var testArr = [["Peter", 10],["Paul", 12]]
+    document.write("<br>")
+    document.write(testArr)
+    document.write("<br>")
+
+    firstFunc(first, last)
+
+    function firstFunc(a, b){
+        var out;
+        out = a + " " + b;
+        document.write(out);
+    }
+    
+    var myGlobal = 10;
+
+    function fun1(){
+        // No var keyword makes a variable global
+        oopsGlobal = 5;
+    }
+    
+    function fun2(){
+        var output = ""
+        if(typeof myGlobal != "undefined"){
+            output += "myGlobal: " + myGlobal;
+        }
+        if(typeof oopsGlobal != "undefined"){
+            output += " oopsGlobal: " + oopsGlobal;
+        }
+        console.log(output)
+    }
+
+    fun1()
+    fun2()
+
+    function callback() {
+        alert("Dingaling!");
+    }
+
+    setTimeout(callback, 1000);
+
+    // Callback with anonymous functions
+    var anonymousFunc = function(){
+        alert("Hi i'm anonYmus");
+    }
+    
+    setTimeout(anonymousFunc, 3000);
+</script>

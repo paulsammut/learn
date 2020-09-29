@@ -1,0 +1,3 @@
+/Users/paul/learn/learn_algo/palindrome_pairs/CMakeFiles/rebuild_cache.dir
+/Users/paul/learn/learn_algo/palindrome_pairs/CMakeFiles/edit_cache.dir
+/Users/paul/learn/learn_algo/palindrome_pairs/CMakeFiles/myexec.dir

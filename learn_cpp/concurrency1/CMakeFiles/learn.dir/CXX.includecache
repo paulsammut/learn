@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/paul/learn/learn_cpp/concurrency1/main.cpp
+iostream
+-
+thread
+-
+string
+-
+vector
+-
+mutex
+-
+
